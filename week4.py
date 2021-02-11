@@ -27,7 +27,7 @@ while True:
     else:
         break
 '''
-'''
+#แบบฝึกหัดที่1
 choice = 0
 bucket_list = []
 bucket = [0,0,0,0,0]
@@ -124,7 +124,7 @@ while (True):
         item()
     else :
         break
-'''
+
 '''
 def Introduce(arg1, arg2 = 'com' , arg3 = 'ed' , arg4 = 'kku') :
     print('Hello, I am '+arg1+', '+arg2+' '+arg3+' '+arg4)
@@ -133,7 +133,7 @@ Introduce(arg1 = 'Python')
 Introduce(arg1 = 'Python', arg3 = 'sci')
 Introduce('Python',arg4 = 'CMU')
 '''
-'''
+#แบบฝึกหัดที่2
 choice=0
 i=5
 dictionary = {
@@ -185,8 +185,8 @@ while True :
             break
         elif exitt=='n':
             continue
-'''
 
+#แบบฝึกหัดที่3
 import time
 name = []
 score = []

@@ -1,5 +1,0 @@
-print('Day Converter Program')
-a = int (input('Input number of Days : '))
-print(a,'Days --> Hour',a*24,'Hours')
-print(a,'Days --> Minutes',a*24*60,'Minutes')
-print(a,'Days --> Seconds',a*24*60*60,'Seconds')

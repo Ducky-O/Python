@@ -1,4 +1,4 @@
-'''
+#แบบฝึกหัดที่1
 class nisit:
     def __init__(self,name,sex,year,faculty,department,id,province) :
         self.name=name
@@ -30,8 +30,8 @@ g=str(input('มาจากจังหวัด : '))
 
 x=nisit(a,b,c,d,e,f,g)
 x.showPHis()
-'''
 
+#แบบฝึกหัดที่2
 import os
 name_list = ['ข้าวกะเพรา','ข้าวไข่เจียว','ข้าวหมูทอด','ผัดมาม่า']
 price_list = [50,30,35,40]

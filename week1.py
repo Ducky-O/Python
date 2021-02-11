@@ -9,7 +9,7 @@ if a > b :
     print('a > b')
     print('ok')
 '''
-#1
+#แบบฝึกหัดที่1
 name =input('What is your name?\n')
 surname =input('What is your sur name?\n')
 year =input('What is your college year?\n')
@@ -19,7 +19,7 @@ print('My surname is %s'%surname)
 print('My college year is %s'%year)
 print('My student code is %s'%code)
 
-#2
+#แบบฝึกหัดที่2
 x = 20
 y = 35.24
 z = 1j
@@ -28,7 +28,7 @@ b = int(y)
 c = complex(x)
 print(float(x),int(y),complex(x))
 
-#3
+#แบบฝึกหัดที่3
 a = input('Input your first number : ')
 b = input('Input your second number : ')
 c = input('Imput your third number : ')

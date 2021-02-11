@@ -1,4 +1,4 @@
-
+#แบบฝึกหัดที่1
 a = input('Input First Number : ')
 b = input('Input Second Number : ')
 print(a,'=',b,a==b)
@@ -25,7 +25,7 @@ print(c)
 c = a >> 2
 print(c)
 '''
-
+#แบบฝึกหัดที่2
 print('Day Converter Program')
 a = int (input('Input number of Days : '))
 print(a,'Days --> Hour',a*24,'Hours')
@@ -52,7 +52,7 @@ animal.add('monkey')
 animal.update(['python','capibara','spider','wombat','penguin','crocodile'])
 print(animal)
 '''
-
+#แบบฝึกหัดที่3
 print('ตะกร้าใส่ของ')
 a = input('สินค้าชิ้นที่ 1 : ')
 b = input('สินค้าชิ้นที่ 2 : ')

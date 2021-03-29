@@ -1,6 +1,13 @@
 import sqlite3
 import os
 import time
+c_allsub = []
+sci = []
+math = []
+thai = []
+eng = []
+soci = []
+com = []
 from sqlite3.dbapi2 import connect
 conn = sqlite3.connect('C:\Phudit_python\project-mid.db')
 c = conn.cursor()
@@ -32,16 +39,61 @@ def calculator():
     os.system('cls')
     time.sleep(1)
     print('-'*10+'คำนวณเกรด'+'-'*10)
-    c_sci = float(input('เกรดวิชาวิทยาศาสตร์ : '))
-    c_math = float(input('เกรดวิชาคณิตศาสตร์ : '))
-    c_thai = float(input('เกรดวิชาภาษาไทย : '))
-    c_eng = float(input('เกรดวิชาภาษาอังกฤษ : '))
-    c_soci = float(input('เกรดวิชาสังคมศึกษา : '))
-    c_com = float(input('เกรดวิชาคอมพิวเตอร์ : '))
-    c_all = (c_sci+c_math+c_thai+c_eng+c_soci+c_com)/6
+    print('-วิชาวิทยาศาสตร์')
+    c_sci1_1 = float(input('    มัธยม 1 เทอม 1 : '))
+    c_sci1_2 = float(input('    มัธยม 1 เทอม 2 : '))
+    c_sci2_1 = float(input('    มัธยม 2 เทอม 1 : '))
+    c_sci2_2 = float(input('    มัธยม 2 เทอม 2 : '))
+    c_sci3_1 = float(input('    มัธยม 3 เทอม 1 : '))
+    c_sci3_2 = float(input('    มัธยม 3 เทอม 2 : '))
+    c_all_sci = (c_sci1_1+c_sci1_2+c_sci2_1+c_sci2_2+c_sci3_1+c_sci3_2)/6
+    sci.append(c_all_sci)
+    print('-วิชาคณิตศาสตร์')
+    c_math1_1 = float(input('  มัธยม 1 เทอม 1 : '))
+    c_math1_2 = float(input('  มัธยม 1 เทอม 2 : '))
+    c_math2_1 = float(input('  มัธยม 2 เทอม 1 : '))
+    c_math2_2 = float(input('  มัธยม 2 เทอม 2 : '))
+    c_math3_1 = float(input('  มัธยม 3 เทอม 1 : '))
+    c_math3_2 = float(input('  มัธยม 3 เทอม 2 : '))
+    c_all_math = (c_math1_1+c_math1_2+c_math2_1+c_math2_2+c_math3_1+c_math3_2)/6
+    print('-วิชาภาษาไทย')
+    c_thai1_1 = float(input('   มัธยม 1 เทอม 1 : '))
+    c_thai1_2 = float(input('   มัธยม 1 เทอม 2 : '))
+    c_thai2_1 = float(input('   มัธยม 2 เทอม 1 : '))
+    c_thai2_2 = float(input('   มัธยม 2 เทอม 2 : '))
+    c_thai3_1 = float(input('   มัธยม 3 เทอม 1 : '))
+    c_thai3_2 = float(input('   มัธยม 3 เทอม 2 : '))
+    c_all_thai = (c_thai1_1+c_thai1_2+c_thai2_1+c_thai2_2+c_thai3_1+c_thai3_2)/6
+    print('-วิชาภาษาอังกฤษ')
+    c_eng1_1 = float(input('   มัธยม 1 เทอม 1 : '))
+    c_eng1_2 = float(input('   มัธยม 1 เทอม 2 : '))
+    c_eng2_1 = float(input('   มัธยม 2 เทอม 1 : '))
+    c_eng2_2 = float(input('   มัธยม 2 เทอม 2 : '))
+    c_eng3_1 = float(input('   มัธยม 3 เทอม 1 : '))
+    c_eng3_2 = float(input('   มัธยม 3 เทอม 2 : '))
+    c_all_eng = (c_eng1_1+c_eng1_2+c_eng2_1+c_eng2_2+c_eng3_1+c_eng3_2)/6
+    print('-วิชาสังคมศึกษา')
+    c_soci1_1 = float(input('   มัธยม 1 เทอม 1 : '))
+    c_soci1_2 = float(input('   มัธยม 1 เทอม 2 : '))
+    c_soci2_1 = float(input('   มัธยม 2 เทอม 1 : '))
+    c_soci2_2 = float(input('   มัธยม 2 เทอม 2 : '))
+    c_soci3_1 = float(input('   มัธยม 3 เทอม 1 : '))
+    c_soci3_2 = float(input('   มัธยม 3 เทอม 2 : '))
+    c_all_soci = (c_soci1_1+c_soci1_2+c_soci2_1+c_soci2_2+c_soci3_1+c_soci3_2)/6
+    print('-วิชาคอมพิวเตอร์')
+    c_com1_1 = float(input('   มัธยม 1 เทอม 1 : '))
+    c_com1_2 = float(input('   มัธยม 1 เทอม 2 : '))
+    c_com2_1 = float(input('   มัธยม 2 เทอม 1 : '))
+    c_com2_2 = float(input('   มัธยม 2 เทอม 2 : '))
+    c_com3_1 = float(input('   มัธยม 3 เทอม 1 : '))
+    c_com3_2 = float(input('   มัธยม 3 เทอม 2 : '))
+    c_all_com = (c_com1_1+c_com1_2+c_com2_1+c_com2_2+c_com3_1+c_com3_2)/6
+    c_allsub = (c_all_sci+c_all_math+c_all_thai+c_all_eng+c_all_soci+c_all_com)/6
     time.sleep(1)
-    print('เกรดเฉลี่ยของคุณ = %.2f\n'%c_all)
+    print('เกรดเฉลี่ยแต่ละวิชา\n -วิชาวิทยาศาสตร์ = %.2f\n'%c_all_sci+' -วิชาคณิตศาสตร์ = %.2f\n'%c_all_math+' -วิชาภาษาไทย = %.2f\n'%c_all_thai+' -วิชาภาษอังกฤษ = %.2f\n'%c_all_eng+' -วิชาสังคมศึกษา = %.2f\n'%c_all_soci+' -วิชาคอมพิวเตอร์ = %.2f'%c_all_com)
+    print('เกรดเฉลี่ยของคุณ = %.2f\n'%c_allsub)
     time.sleep(1)
+
 
 def adddata():
     os.system('cls')
@@ -193,6 +245,11 @@ def adddata():
 def editdata():
     os.system('cls')
     time.sleep(1)
+    print('{0: <10}{1: <20}{2: <20}{3: <20}{4: <8}{5: <10}{6: <15}{7: <15}'.format('ลำดับที่','ชื่อ','สกุล','มัธยมศึกษาปีที่','ห้อง','เลขที่','เกรดเฉลี่ย','เลือกสายการเรียน'))
+    c.execute('''SELECT * FROM student''')
+    result = c.fetchall()
+    for x in result:
+        print('{0: <7}{1: <20}{2: <27}{3: <11}{4: <7}{5: <10}{6: <13}{7: <15}'.format(x[0],x[1],x[2],x[3],x[4],x[5],x[6],x[7]))
     print('-'*10+'กรอกข้อมูลที่ต้องการแก้ไข'+'-'*10)
     line = input('ใส่หมายเลขแถวที่จะแก้ : ')
     a_name = input('ใส่ชื่อที่ต้องการแก้ไข : ')
@@ -211,6 +268,11 @@ def editdata():
 
 def deletedata():
     os.system('cls')
+    print('{0: <10}{1: <20}{2: <20}{3: <20}{4: <8}{5: <10}{6: <15}{7: <15}'.format('ลำดับที่','ชื่อ','สกุล','มัธยมศึกษาปีที่','ห้อง','เลขที่','เกรดเฉลี่ย','เลือกสายการเรียน'))
+    c.execute('''SELECT * FROM student''')
+    result = c.fetchall()
+    for x in result:
+        print('{0: <7}{1: <20}{2: <27}{3: <11}{4: <7}{5: <10}{6: <13}{7: <15}'.format(x[0],x[1],x[2],x[3],x[4],x[5],x[6],x[7]))
     print('-'*10+'กรอกหมายเลขที่ต้องการลบข้อมูล'+'-'*10)
     delete = input('ใส่เลขที่ต้องการลบข้อมูล : ')
     c.execute('''DELETE FROM student WHERE id=?''',delete)

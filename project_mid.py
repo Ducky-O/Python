@@ -1,7 +1,7 @@
 import sqlite3
 import os
 import time
-c_allsub = []
+allsub = []
 sci = []
 math = []
 thai = []
@@ -56,6 +56,7 @@ def calculator():
     c_math3_1 = float(input('  มัธยม 3 เทอม 1 : '))
     c_math3_2 = float(input('  มัธยม 3 เทอม 2 : '))
     c_all_math = (c_math1_1+c_math1_2+c_math2_1+c_math2_2+c_math3_1+c_math3_2)/6
+    math.append(c_all_math)
     print('-วิชาภาษาไทย')
     c_thai1_1 = float(input('   มัธยม 1 เทอม 1 : '))
     c_thai1_2 = float(input('   มัธยม 1 เทอม 2 : '))
@@ -64,6 +65,7 @@ def calculator():
     c_thai3_1 = float(input('   มัธยม 3 เทอม 1 : '))
     c_thai3_2 = float(input('   มัธยม 3 เทอม 2 : '))
     c_all_thai = (c_thai1_1+c_thai1_2+c_thai2_1+c_thai2_2+c_thai3_1+c_thai3_2)/6
+    thai.append(c_all_thai)
     print('-วิชาภาษาอังกฤษ')
     c_eng1_1 = float(input('   มัธยม 1 เทอม 1 : '))
     c_eng1_2 = float(input('   มัธยม 1 เทอม 2 : '))
@@ -72,6 +74,7 @@ def calculator():
     c_eng3_1 = float(input('   มัธยม 3 เทอม 1 : '))
     c_eng3_2 = float(input('   มัธยม 3 เทอม 2 : '))
     c_all_eng = (c_eng1_1+c_eng1_2+c_eng2_1+c_eng2_2+c_eng3_1+c_eng3_2)/6
+    eng.append(c_all_eng)
     print('-วิชาสังคมศึกษา')
     c_soci1_1 = float(input('   มัธยม 1 เทอม 1 : '))
     c_soci1_2 = float(input('   มัธยม 1 เทอม 2 : '))
@@ -80,6 +83,7 @@ def calculator():
     c_soci3_1 = float(input('   มัธยม 3 เทอม 1 : '))
     c_soci3_2 = float(input('   มัธยม 3 เทอม 2 : '))
     c_all_soci = (c_soci1_1+c_soci1_2+c_soci2_1+c_soci2_2+c_soci3_1+c_soci3_2)/6
+    soci.append(c_all_soci)
     print('-วิชาคอมพิวเตอร์')
     c_com1_1 = float(input('   มัธยม 1 เทอม 1 : '))
     c_com1_2 = float(input('   มัธยม 1 เทอม 2 : '))
@@ -88,7 +92,9 @@ def calculator():
     c_com3_1 = float(input('   มัธยม 3 เทอม 1 : '))
     c_com3_2 = float(input('   มัธยม 3 เทอม 2 : '))
     c_all_com = (c_com1_1+c_com1_2+c_com2_1+c_com2_2+c_com3_1+c_com3_2)/6
+    com.append(c_all_com)
     c_allsub = (c_all_sci+c_all_math+c_all_thai+c_all_eng+c_all_soci+c_all_com)/6
+    allsub.append(c_allsub)
     time.sleep(1)
     print('เกรดเฉลี่ยแต่ละวิชา\n -วิชาวิทยาศาสตร์ = %.2f\n'%c_all_sci+' -วิชาคณิตศาสตร์ = %.2f\n'%c_all_math+' -วิชาภาษาไทย = %.2f\n'%c_all_thai+' -วิชาภาษอังกฤษ = %.2f\n'%c_all_eng+' -วิชาสังคมศึกษา = %.2f\n'%c_all_soci+' -วิชาคอมพิวเตอร์ = %.2f'%c_all_com)
     print('เกรดเฉลี่ยของคุณ = %.2f\n'%c_allsub)
@@ -98,16 +104,18 @@ def calculator():
 def adddata():
     os.system('cls')
     print('-'*10+'โปรดระบุข้อมูลเพื่อจองสายการเรียน'+'-'*10)
-    a_all = input('เกรดเฉลี่ย : ')
-    if a_all >= '2.75' :
+    a_all = float(allsub[0])
+    if a_all >= float('2.75') :
         time.sleep(1)
         print('\n  สายการเรียนที่สามารถเลือกลงได้มี\n1.วิทย์-คณิต     2.วิทย์-คอม\n3.ศิลป์-คำนวณ   4.ศิลป์-ภาษา')
         select = input('เลือกสายการเรียน : ')
         if select == '1' :
             time.sleep(1)
-            s_sci = input('กรุณาระบุเกรดวิชาวิทยาศาสตร์ : ')
-            s_math = input('กรุณาระบุเกรดวิชาคณิตศาสตร์ : ')
-            if (s_sci >= '2.75' and s_math >= '2.75') :
+            s_sci = sci[0]
+            print('เกรดวิชาวิทยาศาสตร์ของคุณ : %.2f'%sci[0])
+            s_math = math[0]
+            print('เกรดวิชาคณิตศาสตร์ของคุณ : %.2f'%math[0])
+            if (s_sci >= float('2.75') and s_math >= float('2.75')) :
                 time.sleep(1)
                 print('\n   คุณสามารถลงสายการเรียนวิทย์-คณิตได้\nกรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง\n'+'-'*30)
                 a_name = input('ใส่ชื่อ : ')
@@ -115,28 +123,30 @@ def adddata():
                 a_year = input('มัธยมศึกษาปีที่ : ')
                 a_room = input('ห้อง : ')
                 a_numroom = input('เลขที่ : ')
-                a_grade = input('เกรดเฉลี่ย : ')
-                a_study = input('เลือกเรียนสายการเรียน : ')
+                a_grade = '%.2f'%allsub[0]
+                a_study = 'วิทย์-คณิต'
                 c.execute('''INSERT INTO student(name,lname,year,room,numroom,grade,study) VALUES(?,?,?,?,?,?,?)''',
                     (a_name,a_lname,a_year,a_room,a_numroom,a_grade,a_study))
                 conn.commit()
                 time.sleep(1)
                 print('\n!!!เพิ่มข้อมูลการลงทะเบียนเรียบร้อยแล้ว!!!\n')
                 time.sleep(1)
-            elif (s_sci >= '2.75' and s_math <= '2.75'):
+            elif (s_sci >= float('2.75') and s_math <= float('2.75')):
                 print('\n\t!!!ไม่สามารถเลือกสายการเรียนวิทย์-คณิตได้!!!\nเนื่องจากเกรดวิชาคณิตศาสตร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้\n')
                 time.sleep(1)
-            elif (s_sci <= '2.75' and s_math >= '2.75'):
+            elif (s_sci <= float('2.75') and s_math >= float('2.75')):
                 print('\n\t!!!ไม่สามารถเลือกสายการเรียนวิทย์-คณิตได้!!!\nเนื่องจากเกรดวิชาวิทยาศาสตร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้\n')
                 time.sleep(1)
-            elif (s_sci <= '2.75' and s_math <= '2.75'):
+            elif (s_sci <= float('2.75') and s_math <= float('2.75')):
                 print('\n\t!!!ไม่สามารถเลือกสายการเรียนวิทย์-คณิตได้!!!\nเนื่องจากเกรดวิชาวิทยาศาสตร์และคณิตศาสตร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้\n')
                 time.sleep(1)
         elif select == '2' :
             time.sleep(1)
-            s_sci = input('กรุณาระบุเกรดวิชาวิทยาศาสตร์ : ')
-            s_com = input('กรุณาระบุเกรดวิชาคอมพิวเตอร์ : ')
-            if (s_sci >= '2.75' and s_com >= '2.75') :
+            s_sci = sci[0]
+            print('เกรดวิชาวิทยาศาสตร์ของคุณ : '+float(sci[0]))
+            s_com = com[0]
+            print('เกรดวิชาคอมพิวเตอร์ของคุณ : '+float(com[0]))
+            if (s_sci >= float('2.75') and s_com >= float('2.75')) :
                 time.sleep(1)
                 print('\n   คุณสามารถลงสายการเรียนวิทย์-คอมได้\nกรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง\n'+'-'*30)
                 a_name = input('ใส่ชื่อ : ')
@@ -144,27 +154,28 @@ def adddata():
                 a_year = input('มัธยมศึกษาปีที่ : ')
                 a_room = input('ห้อง : ')
                 a_numroom = input('เลขที่ : ')
-                a_grade = input('เกรดเฉลี่ย : ')
-                a_study = input('เลือกเรียนสายการเรียน : ')
+                a_grade = '%.2f'%allsub[0]
+                a_study = 'วิทย์-คอม'
                 c.execute('''INSERT INTO student(name,lname,year,room,numroom,grade,study) VALUES(?,?,?,?,?,?,?)''',
                     (a_name,a_lname,a_year,a_room,a_numroom,a_grade,a_study))
                 conn.commit()
                 time.sleep(1)
                 print('\n!!!เพิ่มข้อมูลการลงทะเบียนเรียบร้อยแล้ว!!!\n')
                 time.sleep(1)
-            elif (s_sci <= '2.75' and s_com >= '2.75') :
+            elif (s_sci <= float('2.75') and s_com >= float('2.75')) :
                 print('\n\t!!!ไม่สามารถเลือกสายการเรียนวิทย์-คอมได้!!!\nเนื่องจากเกรดวิชาวิทยาศาสตร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้\n')
                 time.sleep(1)
-            elif (s_sci >= '2.75' and s_com <= '2.75') :
+            elif (s_sci >= float('2.75') and s_com <= float('2.75')) :
                 print('\n\t!!!ไม่สามารถเลือกสายการเรียนวิทย์-คอมได้!!!\nเนื่องจากเกรดวิชาคอมพิวเตอร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้\n')
                 time.sleep(1)
-            elif (s_sci <= '2.75' and s_com <= '2.75') :
+            elif (s_sci <= float('2.75') and s_com <= float('2.75')) :
                 print('\n\t!!!ไม่สามารถเลือกสายการเรียนวิทย์-คอมได้!!!\nเนื่องจากเกรดวิชาวิทยาศาสตร์และคอมพิวเตอร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้\n')
                 time.sleep(1)
         elif select == '3' :
             time.sleep(1)
-            s_math = input('กรุณาระบุเกรดวิชาคณิตศาสตร์ : ')
-            if s_math >= '2.75' :
+            s_math = math[0]
+            print('เกรดวิชาคณิตศาสตร์ของคุณ : '+float(math[0]))
+            if s_math >= float('2.75') :
                 time.sleep(1)
                 print('\n   คุณสามารถลงสายการเรียนศิลป์-คำนวณได้\nกรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง\n'+'-'*30)
                 a_name = input('ใส่ชื่อ : ')
@@ -172,41 +183,42 @@ def adddata():
                 a_year = input('มัธยมศึกษาปีที่ : ')
                 a_room = input('ห้อง : ')
                 a_numroom = input('เลขที่ : ')
-                a_grade = input('เกรดเฉลี่ย : ')
-                a_study = input('เลือกเรียนสายการเรียน : ')
+                a_grade = '%.2f'%allsub[0]
+                a_study = 'ศิลป์-คำนวณ'
                 c.execute('''INSERT INTO student(name,lname,year,room,numroom,grade,study) VALUES(?,?,?,?,?,?,?)''',
                     (a_name,a_lname,a_year,a_room,a_numroom,a_grade,a_study))
                 conn.commit()
                 time.sleep(1)
                 print('\n!!!เพิ่มข้อมูลการลงทะเบียนเรียบร้อยแล้ว!!!\n')
                 time.sleep(1)
-            elif s_math <= '2.75' :
-                print('\n\t!!!ไม่สามารถเลือกสายการเรียนวิทย์-คอมได้!!!\nเนื่องจากเกรดวิชาวิทยาศาสตร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้\n')
+            elif s_math <= float('2.75') :
+                print('\n\t!!!ไม่สามารถเลือกสายการเรียนศิลป์-คำนวณได้!!!\nเนื่องจากเกรดวิชาคณิตศาสตร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้\n')
                 time.sleep(1)
         elif select == '4' :
             time.sleep(1)
-            print('\n   คุณสามารถลงสายการเรียนศิลป์-คำนวณได้\nกรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง\n'+'-'*30)
+            print('\n   คุณสามารถลงสายการเรียนศิลป์-ภาษาได้\nกรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง\n'+'-'*30)
             a_name = input('ใส่ชื่อ : ')
             a_lname = input('ใส่นามสกุล : ')
             a_year = input('มัธยมศึกษาปีที่ : ')
             a_room = input('ห้อง : ')
             a_numroom = input('เลขที่ : ')
-            a_grade = input('เกรดเฉลี่ย : ')
-            a_study = input('เลือกเรียนสายการเรียน : ')
+            a_grade = '%.2f'%allsub[0]
+            a_study = 'ศิลป์-ภาษา'
             c.execute('''INSERT INTO student(name,lname,year,room,numroom,grade,study) VALUES(?,?,?,?,?,?,?)''',
                 (a_name,a_lname,a_year,a_room,a_numroom,a_grade,a_study))
             conn.commit()
             time.sleep(1)
             print('\n!!!เพิ่มข้อมูลการลงทะเบียนเรียบร้อยแล้ว!!!\n')
             time.sleep(1)
-    elif a_all <= '2.75' :
+    elif a_all <= float('2.75') :
         time.sleep(1)
-        print(' สายการเรียนที่สามารถเลือกลงได้มี\n1.ศิลป์-คำนวณ   2.ศิลป์ภาษา')
+        print(' สายการเรียนที่สามารถเลือกลงได้มี\n1.ศิลป์-คำนวณ   2.ศิลป์-ภาษา')
         select = input('เลือกสายการเรียน : ')
         if select == '1' :
             time.sleep(1)
-            s_math = input('กรุณาระบุเกรดวิชาคณิตศาสตร์ : ')
-            if s_math >= '2.75' :
+            s_math = math[0]
+            print('กรุณาระบุเกรดวิชาคณิตศาสตร์ : ')
+            if s_math >= float('2.75') :
                 time.sleep(1)
                 print('\n   คุณสามารถลงสายการเรียนศิลป์-คำนวณได้\nกรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง\n'+'-'*30)
                 a_name = input('ใส่ชื่อ : ')
@@ -214,27 +226,27 @@ def adddata():
                 a_year = input('มัธยมศึกษาปีที่ : ')
                 a_room = input('ห้อง : ')
                 a_numroom = input('เลขที่ : ')
-                a_grade = input('เกรดเฉลี่ย : ')
-                a_study = input('เลือกเรียนสายการเรียน : ')
+                a_grade = '%.2f'%allsub
+                a_study = 'ศิลป์-คำนวณ'
                 c.execute('''INSERT INTO student(name,lname,year,room,numroom,grade,study) VALUES(?,?,?,?,?,?,?)''',
                     (a_name,a_lname,a_year,a_room,a_numroom,a_grade,a_study))
                 conn.commit()
                 time.sleep(1)
                 print('\n!!!เพิ่มข้อมูลการลงทะเบียนเรียบร้อยแล้ว!!!\n')
                 time.sleep(1)
-            elif s_math<='2.75' :
+            elif s_math <= float('2.75') :
                 time.sleep(1)
                 print('\n\t!!!ไม่สามารถเลือกสายการเรียนศิลป์-คำนวณได้!!!\nเนื่องจากเกรดวิชาคณิตศาสตร์ไม่ถึงตามที่เกณฑ์ที่กำหนดไว้')
         if select == '2' :
             time.sleep(1)
-            print(' คุณสามารถลงสายการเรียนศิลป์ภาษาได้\nกรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง\n'+'-'*30)
+            print(' คุณสามารถลงสายการเรียนศิลป์-ภาษาได้\nกรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง\n'+'-'*30)
             a_name = input('ใส่ชื่อ : ')
             a_lname = input('ใส่นามสกุล : ')
             a_year = input('มัธยมศึกษาปีที่ : ')
             a_room = input('ห้อง : ')
             a_numroom = input('เลขที่ : ')
-            a_grade = input('เกรดเฉลี่ย : ')
-            a_study = input('เลือกเรียนสายการเรียน : ')
+            a_grade = '%.2f'%allsub
+            a_study = 'ศิลป์-ภาษา'
             c.execute('''INSERT INTO student(name,lname,year,room,numroom,grade,study) VALUES(?,?,?,?,?,?,?)''',
                 (a_name,a_lname,a_year,a_room,a_numroom,a_grade,a_study))
             conn.commit()
@@ -257,10 +269,9 @@ def editdata():
     a_year = input('ใส่ชั้นปีที่ต้องการแก้ไข : ')
     a_room = input('ใส่ห้องที่ต้องการแก้ไข : ')
     a_numroom = input('ใส่เลขที่ที่ต้องการแก้ไข : ')
-    a_grade = input('ใส่เกรดเฉลี่ยที่ต้องการแก้ไข : ')
-    a_study = input('ใส่สายการเรียนที่ต้องการจะแก้ไข : ')
-    data = (a_name,a_lname,a_year,a_room,a_numroom,a_grade,a_study,line)
-    c.execute('''UPDATE student SET name=?,lname=?,year=?,room=?,numroom=?,grade=?,study=? WHERE id=?''',data)
+    a_grade = '%.2f'%allsub
+    data = (a_name,a_lname,a_year,a_room,a_numroom,a_grade,line)
+    c.execute('''UPDATE student SET name=?,lname=?,year=?,room=?,numroom=?,grade=? WHERE id=?''',data)
     conn.commit()
     time.sleep(1)
     print('\n!!!แก้ไขข้อมูลนักเรียนเรียบร้อยแล้ว!!!\n')
